@@ -81,8 +81,6 @@ export default function MovieCollection() {
 			setIsLoading(false)
 		}, 500)
 	}, [])
-	console.log(collection.id);
-	console.log(id);
 	return (
 		<>
 			{isLoading
