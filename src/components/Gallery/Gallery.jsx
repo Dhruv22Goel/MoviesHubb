@@ -51,8 +51,7 @@ function Gallery({ id, media_type }) {
 
   useEffect(() => {
     fetchCredits();
-    // eslint-disable-next-line
-  }, []);
+  }, [id]);
 
   return (
     <AliceCarousel
