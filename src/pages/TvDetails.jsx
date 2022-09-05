@@ -26,7 +26,7 @@ export default function App() {
 	}
 	useEffect(() => {
 		fetchtv()
-	}, [1])
+	}, [id])
 	
 	return (
 		<div className="App">
