@@ -73,7 +73,7 @@ export default function MovieCollection() {
 	}
 	useEffect(() => {
 		fetchRecommendations()
-	}, [])
+	}, [id])
 
 	const [isLoading, setIsLoading] = useState(true)
 	useEffect(() => {
