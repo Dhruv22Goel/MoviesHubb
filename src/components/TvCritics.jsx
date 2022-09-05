@@ -51,7 +51,7 @@ export default function Critis() {
 	}
 	useEffect(() => {
 		fetchRecommendations()
-	}, [])
+	}, [id])
 	const [isLoading, setIsLoading] = useState(true)
 	useEffect(() => {
 		setTimeout(() => {
