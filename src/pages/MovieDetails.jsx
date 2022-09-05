@@ -43,7 +43,7 @@ export default function App() {
 	}
 	useEffect(() => {
 		fetchMovie()
-	}, [1])
+	}, [id])
 	function alpha() {
 		fetchMovie();
 	}
