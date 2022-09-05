@@ -42,7 +42,7 @@ export default function Reviews(props) {
     }
     useEffect(() => {
         fetchReviews()
-    }, [])
+    }, [id])
     return (
         <ReviewsDiv>
             <Carousel
