@@ -40,17 +40,34 @@ const Top = styled.div`
     align-items:flex-end;
 `
 const Button = styled.button`
-    border:1px solid white;
-    border-radius:5px;
-    height:30px;
-    width:100px;
-    background-color:black;
-    color:white;
     margin-left:25vw;
-    :hover{
-        background-color:white;
-        color:black;
-        border:1px solid white;
+    background: #111111;
+    color: #ffffff; 
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 10px;
+    border: 2px solid #4f4f4f; 
+    transform: translate(0); 
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+    :before {
+        content:"";
+        position: absolute; 
+        background: linear-gradient(to left, #2d313a, #1c1e24, #2d313a);
+        top: 0; 
+        bottom: 0;
+        width: 8px;
+        left: -32px; 
+        transform: rotate(-16deg);
+        filter: blur (6px);
+    }
+    :hover::before 
+    { 
+        left: calc(100% + 32px);
+        transition: 0.75s;
+        background:#ffffff;
     }
 `
 const H1 = styled.h1`
