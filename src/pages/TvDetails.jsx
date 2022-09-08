@@ -2,15 +2,7 @@ import React, { useEffect, useState } from "react";
 import Tv from "../components/TvComponent.jsx";
 import NavBar from "../components/NavBar.jsx";
 import axios from "axios";
-import Header from "../components/Header.jsx";
-import styled from "styled-components";
 import { useParams } from "react-router-dom";
-const H1 = styled.h1`
-    padding-top:20px;
-    text-align:center;
-    margin:0px;
-    font-weight: lighter;
-`
 
 export default function App() {
 	const { id } = useParams()
@@ -30,7 +22,6 @@ export default function App() {
 	
 	return (
 		<div className="App">
-			<Header />
 			<Tv
 				tvs={tvs}
 			/>
