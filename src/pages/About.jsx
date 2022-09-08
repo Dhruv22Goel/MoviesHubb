@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import NavBar from "../components/NavBar";
 import ProfilePic from "../ProfilePic (2).jpg";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const AboutDiv = styled.div`
     max-height:100vh;
@@ -19,6 +18,7 @@ const AboutMeImgDiv=styled.div`
     width:140px;
     z-index:100;
     margin:0px 0px -70px 550px;
+    // margin-bottom:-50px;
 `
 const AboutMeImg = styled.img`
     height:140px;
@@ -43,10 +43,6 @@ const P = styled.p`
     font-size: 16px;
     text-align: left;
     word-wrap: break-word;
-`
-const Social = styled.div`
-    display:flex;
-    flex-direction:row;
 `
 export default function About(){
     return(
