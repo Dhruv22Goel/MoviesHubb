@@ -6,7 +6,6 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton"
 import 'react-loading-skeleton/dist/skeleton.css'
 import MovieCritis from "./MovieCritics";
 import MovieCollection from "./MovieCollection";
-import WatchProvider from "./WatchProvider";
 import NoImageLS from "../NoImageLS.png";
 import Trailer from "./Trailer";
 import Similar from "./Similar";
