@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
-import Header from "../components/Header.jsx";
 import axios from "axios";
 import styled from "styled-components";
 import Recommendations from "../components/Recommendations.jsx";
@@ -27,17 +26,32 @@ const Input = styled.input`
     color:white;
 `
 const Button = styled.button`
-    border:1px solid white;
-    border-radius:5px;
-    height:fit-content;
-    width:fit-content;
-    background-color:black;
-    color:white;
-    padding:10px;
-    :hover{
-        background-color:white;
-        color:black;
-        border:1px solid black;
+    background: #111111;
+    color: #ffffff; 
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 10px;
+    border: 2px solid #4f4f4f; 
+    transform: translate(0); 
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+    :before {
+        content:"";
+        position: absolute; 
+        background: linear-gradient(to left, #2d313a, #1c1e24, #2d313a);
+        top: 0; 
+        bottom: 0;
+        width: 8px;
+        left: -32px; 
+        transform: rotate(-16deg);
+        filter: blur (6px);
+    }
+    :hover::before 
+    { 
+        left: calc(100% + 32px);
+        transition: 0.75s;
     }
 `
 const Select = styled.select`
@@ -57,7 +71,7 @@ const Option = styled.option`
 `
 const ButtonDiv = styled.div`
   margin:20px;
-	margin-left:35vw;
+  margin-left:35vw;
   display:flex;
   flex-direction:row;
   gap:175px;
@@ -80,15 +94,11 @@ export default function Trending() {
 		setseacrh(uname.value);
 		fetchMovie();
 		setcurrentpage(1);
-		console.log(type)
-		console.log(`${API_URL}search/${type}?api_key=ec16f51aa2aeb34f870ccabdaf00a523&language=en-US&query=${search}&${pages}&include_adult=false`)
 	}
 
 	function Changetype() {
 		var a = document.getElementById("media_type")
 		type = a.value;
-		console.log(type)
-		console.log(`${API_URL}search/${type}?api_key=ec16f51aa2aeb34f870ccabdaf00a523&language=en-US&query=${search}&${pages}&include_adult=false`)
 	}
 	const [movie, setmovie] = useState([]);
 	const fetchMovie = async () => {
@@ -102,24 +112,21 @@ export default function Trending() {
 	}
 	useEffect(() => {
 		fetchMovie()
-	}, [])
+	}, [pages])
 
 	const incpage = () => {
 		fetchMovie();
 		setcurrentpage(prevpage => prevpage + 1);
-		console.log(currentpage);
 		fetchMovie();
 	}
 	const decpage = () => {
 		if (currentpage > 1) {
 			setcurrentpage(prevpage => prevpage - 1);
 		}
-		console.log(currentpage);
 		fetchMovie()
 	}
 	return (
 		<>
-			<Header />
 			<H1>SEARCH</H1>
 			<SearchBar>
 				<Input onChange={send} type="text" placeholder="Search" id="uname" autoFocus={true} autoComplete="off" />
