@@ -151,7 +151,7 @@ export default function Tv(props) {
     setTimeout(() => {
       setIsLoading(false)
     }, 500)
-  }, [])
+  }, [id])
 
   return (
     <TvDetailsDiv>
