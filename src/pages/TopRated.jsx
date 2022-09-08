@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Header from "../components/Header.jsx";
 import axios from "axios";
 import styled from "styled-components";
 import Recommendations from "../components/Recommendations.jsx";
@@ -18,17 +17,33 @@ const H2 = styled.h2`
   font-weight: lighter;
 `
 const Button = styled.button`
-    border:1px solid white;
-    border-radius:5px;
-    height:fit-content;
-    width:fit-content;
-    background-color:black;
-    color:white;
-    padding:10px;
-    :hover{
-        background-color:white;
-        color:black;
-        border:1px solid black;
+    background: #111111;
+    color: #ffffff; 
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 10px;
+    border: 2px solid #4f4f4f; 
+    transform: translate(0); 
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+    :before {
+        content:"";
+        position: absolute; 
+        background: linear-gradient(to left, #2d313a, #1c1e24, #2d313a);
+        top: 0; 
+        bottom: 0;
+        width: 8px;
+        left: -32px; 
+        transform: rotate(-16deg);
+        filter: blur (6px);
+    }
+    :hover::before 
+    { 
+        left: calc(100% + 32px);
+        transition: 0.75s;
+        background:#ffffff;
     }
 `
 const ButtonDiv = styled.div`
@@ -55,30 +70,21 @@ export default function TopRated() {
     const { data: { results } } = await axios.get(`${API_URL}tv/top_rated?api_key=ec16f51aa2aeb34f870ccabdaf00a523&language=en-US&${pages}`)
     setRecommendations2(results);
   }
-  useEffect(() => {
-    fetchRecommendations2()
-  }, [])
-
-
+  
+  
   const incpage = () => {
-    fetchRecommendations();
-    fetchRecommendations2();
     setcurrentpage(prevpage => prevpage + 1);
-    console.log(currentpage);
-    fetchRecommendations();
-    fetchRecommendations2();
   }
   const decpage = () => {
     if (currentpage > 1) {
       setcurrentpage(prevpage => prevpage - 1);
     }
-    console.log(currentpage);
-    fetchRecommendations()
-    fetchRecommendations2()
   }
+  useEffect(() => {
+    fetchRecommendations2()
+  }, [currentpage])
   return (
     <div>
-      <Header />
       <TrendingDiv>
         <H1>TOP RATED</H1>
         <H2>MOVIE</H2>
