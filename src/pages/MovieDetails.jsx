@@ -7,7 +7,6 @@ import { useParams } from "react-router-dom";
 export default function App() {
 	const { id } = useParams()
 	const API_URL = "https://api.themoviedb.org/3/";
-
 	const [movies, setmovies] = useState({})
 	const fetchMovie = async () => {
 		const { data } = await axios.get(`${API_URL}movie/${id}?api_key=ec16f51aa2aeb34f870ccabdaf00a523&language=en-US&page=1&append_to_response=reviews,similar,credits,alternative_titles,videos`)
@@ -19,9 +18,9 @@ export default function App() {
 	useEffect(() => {
 		fetchMovie()
 	}, [id])
+	console.log(movies)
 	return (
 		<div className="App">
-			<Header />
 			<Movie
 				movies={movies}
 			/>
