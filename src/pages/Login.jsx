@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
-import jwt_decode from "jwt-decode";
+import * as jwt-decode from "jwt-decode";
 function Login() {
   const [user, setUser] = useState({});
 
