@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import NOIMAGE from "../no_image.jpg"
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton"
 import 'react-loading-skeleton/dist/skeleton.css'
-import Collection from "../pages/Collection";
 import { Link } from "react-router-dom";
 const CollectionDiv = styled.div`
 	display:flex;
