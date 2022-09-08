@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import NavBar from "../components/NavBar";
 const NotFoundDiv = styled.div`
     display:flex;
     justify-contetn:center;
@@ -14,10 +15,13 @@ const NotFoundTextDiv = styled.div`
 `
 export default function NotFound() {
     return (
+        <>
         <NotFoundDiv>
             <NotFoundTextDiv>
                 ERROR! 404 NOT FOUND
             </NotFoundTextDiv>
         </NotFoundDiv>
+        <NavBar/>
+        </>
     )
 }
