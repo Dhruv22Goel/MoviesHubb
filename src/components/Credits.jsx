@@ -42,7 +42,6 @@ export default function Credits() {
                     <Link to="/search" className="link link3">Search</Link>
                     <Link to="/discover" className="link link3">Discover</Link>
                 </Alpha>
-                    {/* <Link to="/login" className="link link3">Login</Link> */}
             </Redirects>
             <Text>© 2022</Text>
         </CreditsDiv>
