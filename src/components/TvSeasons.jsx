@@ -71,7 +71,7 @@ export default function TvSeasons() {
 	}
 	useEffect(() => {
 		fetchRecommendations()
-	}, [])
+	}, [id])
 	return (
 		<>
 			<SeasonsDiv>
