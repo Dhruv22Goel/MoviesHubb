@@ -91,10 +91,8 @@ export default function Collection() {
     useEffect(() => {
         fetchRecommendations()
     }, [])
-    console.log(movie);
     return (
         <div>
-            <Header />
             <CollectionDeatilsDiv>
                 <CollectionLanding>
                     <BackgroundDiv>
