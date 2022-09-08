@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton"
 import 'react-loading-skeleton/dist/skeleton.css'
-import { useParams } from "react-router-dom";
 import axios from "axios";
 const MovieCritis = styled.div`
     background-color:#111111;
@@ -12,13 +11,6 @@ const MovieCritis = styled.div`
     width:22vw;
     // max-height:90vh;
     padding:10px;
-`
-const Rated = styled.div`
-    margin-left:7px;
-    padding:7px;
-    border:1px solid grey;
-    background-color:#111111;
-    width:fit-content
 `
 const Details = styled.div`padding:7px;`
 const H3 = styled.h3`
@@ -32,7 +24,6 @@ const H1 = styled.h1`
 `
 const API_URL = "https://api.themoviedb.org/3/";
 export default function Critis(props) {
-	// const { id } = useParams()
 	const id = props.id
 	const [movie,setmovie] = useState([]);
 	const [genre, setgenre] = useState([]);
@@ -51,7 +42,6 @@ export default function Critis(props) {
 		setcountry(data.production_countries)
 		settitle(data.alternative_titles.titles)
 		setactor(data.credits.cast)
-		// setreview(data.reviews.results)
 	}
 	useEffect(() => {
 		fetchRecommendations()
