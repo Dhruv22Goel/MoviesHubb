@@ -3,7 +3,6 @@ import styled from "styled-components";
 import axios from "axios";
 import NavBar from "../components/NavBar.jsx";
 import Recommendations from "../components/Recommendations.jsx";
-import Header from "../components/Header.jsx";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 const PeopleDiv = styled.div`
@@ -110,7 +109,6 @@ export default function People() {
     }
     return (
         <PeopleDiv>
-            <Header />
             <PeopleLanding>
                 <PeoplePoster src={`${IMAGE_PATH_W500}${people.profile_path}`} />
                 <PeopleName>{people.name}</PeopleName>
