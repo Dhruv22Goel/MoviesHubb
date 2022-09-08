@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Youtube from 'react-youtube'
 import { useParams } from "react-router-dom";
-
 const API_URL = "https://api.themoviedb.org/3/";
 export default function Trailer(props) {
     const type = props.media_type;
-    const { id } = useParams)=();
+    const { id } = useParams();
     const [trailer, setTrailer] = useState([])
     const fetchvideos = async () => {
         const { data } = await axios.get(`${API_URL}${type}/${id}/videos?api_key=ec16f51aa2aeb34f870ccabdaf00a523&language=en-US`);
@@ -23,7 +22,6 @@ export default function Trailer(props) {
     alpha();
     useEffect(() => {
         fetchvideos()
-        // eslint-disable-next-line
     }, [id])
     const opts = {
         width: '420px',
