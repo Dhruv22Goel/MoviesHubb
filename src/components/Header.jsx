@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import Logo from "../logo.jpg";
+import { Link } from "react-router-dom"
 const HeaderDiv =styled.div`
   width: 100%;
   height:10vh;
@@ -12,16 +14,22 @@ const HeaderDiv =styled.div`
   z-index: 100;
 `
 const Img = styled.img`
-  margin-left: 22vw;
+  margin-left: 21vw;
   margin-right:0;
   margin-top:15px;
 `
 const Div = styled.div`
-  margin-left:25vw;
+  margin-left:19vw;
+`
+const Img2 = styled.img`
+  margin-top:15px;
+  margin:5px;
+  height:10vh;
 `
 const Header = (props) => {
   return (
   <HeaderDiv onClick={() => window.scroll(0, 0)}>
+    <Img2 src={Logo}/>
     <Div>🎬 MOVIES HUBB 🎥</Div> <Img src={props.img}/>
   </HeaderDiv>
   );
