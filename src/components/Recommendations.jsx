@@ -67,7 +67,6 @@ export default function Recommendations(props) {
     const [isLoading, setIsLoading] = useState(true)
 
     const id = props.recommendations.id;
-    // const { id } = useParams()
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(false)
