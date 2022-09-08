@@ -12,17 +12,33 @@ const H1 = styled.h1`
   font-weight: lighter;
 `
 const Button = styled.button`
-    border:1px solid white;
-    border-radius:5px;
-    height:fit-content;
-    width:fit-content;
-    background-color:black;
-    color:white;
-    padding:10px;
-    :hover{
-        background-color:white;
-        color:black;
-        border:1px solid black;
+    background: #111111;
+    color: #ffffff; 
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 10px;
+    border: 2px solid #4f4f4f; 
+    transform: translate(0); 
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+    :before {
+        content:"";
+        position: absolute; 
+        background: linear-gradient(to left, #2d313a, #1c1e24, #2d313a);
+        top: 0; 
+        bottom: 0;
+        width: 8px;
+        left: -32px; 
+        transform: rotate(-16deg);
+        filter: blur (6px);
+    }
+    :hover::before 
+    { 
+        left: calc(100% + 32px);
+        transition: 0.75s;
+        background:#ffffff;
     }
 `
 const ButtonDiv = styled.div`
@@ -39,30 +55,22 @@ export default function TVSeries() {
   const [recommendations, setRecommendations] = useState([]);
   const fetchRecommendations = async () => {
     const { data: { results } } = await axios.get(`${API_URL}trending/movie/week?api_key=ec16f51aa2aeb34f870ccabdaf00a523&language=en-US&${pages}`)
-    // const { data } = await axios.get(`${API_URL}trending/movie/week?api_key=ec16f51aa2aeb34f870ccabdaf00a523&language=en-US&${pages}`)
     setRecommendations(results);
-    // console.log(data)
   }
-  useEffect(() => {
-    fetchRecommendations()
-  }, [])
-
+  
   const incpage = () => {
-    fetchRecommendations();
     setcurrentpage(prevpage => prevpage + 1);
-    console.log(currentpage);
-    fetchRecommendations();
   }
   const decpage = () => {
     if (currentpage > 1) {
       setcurrentpage(prevpage => prevpage - 1);
     }
-    console.log(currentpage);
-    fetchRecommendations()
   }
+  useEffect(() => {
+    fetchRecommendations()
+  }, [currentpage])
   return (
     <div>
-      <Header />
       <MovieDiv>
         <H1>MOVIES</H1>
         <div className="recommendations">
