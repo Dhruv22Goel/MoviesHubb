@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Recommendations from "../components/Recommendations.jsx";
 import axios from "axios";
 import Movie from "../components/MovieComponent.jsx";
-import {useParams} from "react-router-dom";
 
 const H1 = styled.h1`
     padding-top:20px;
@@ -12,7 +11,7 @@ const H1 = styled.h1`
     font-weight: lighter;
 `
 export default function Similar(props) {
-	const { id } = useParams();
+	const id = props.id
 	const type = props.media_type;
 	const API_URL = "https://api.themoviedb.org/3/";
 	const [recommendations, setRecommendations] = useState([]);
@@ -43,7 +42,7 @@ export default function Similar(props) {
 	}
 	return (
 		<>
-			<H1> Similar Movies</H1>
+			<H1> Similar</H1>
 			<div className="recommendations2">
 				{recommendations.map(recommendations => (
 					<Recommendations
