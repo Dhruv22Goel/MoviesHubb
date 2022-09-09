@@ -19,7 +19,7 @@ export default function App() {
   var exacts = true;
   return (
     <div>
-      <Header img={user.picture}/>
+      <Header/>
       <Router>
         <Routes>
           <Route path="/" element={<Home />} exact={`${exacts}`} />
