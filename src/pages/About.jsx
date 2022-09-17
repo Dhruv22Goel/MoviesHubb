@@ -3,7 +3,7 @@ import styled from "styled-components";
 import NavBar from "../components/NavBar";
 import ProfilePic from "../ProfilePic (2).jpg";
 import KanavProfilePic from "../WhatsApp Image 2022-09-09 at 2.11.36 PM.jpeg";
-import PushkarProfilePic from "../";
+import PushkarProfilePic from "../WhatsApp Image 2022-09-17 at 9.35.19 AM.jpeg";
 
 const AboutDiv = styled.div`
     max-height:100vh;
