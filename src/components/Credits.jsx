@@ -33,14 +33,14 @@ export default function Credits() {
         <CreditsDiv>
             <Redirects>
                 <Link to="/" className="link link3" exact onClick={scroll}>Home</Link>
-                <Link to="/about" className="link link3">About Us</Link>
+                <Link to="/about" className="link link3" onClick={scroll}>About Us</Link>
                 <Alpha>
-                    <Link to="/toprated" className="link link3">Top Rated</Link>
-                    <Link to="/upcoming" className="link link3">Upcoming</Link>
+                    <Link to="/toprated" className="link link3" onClick={scroll}>Top Rated</Link>
+                    <Link to="/upcoming" className="link link3" onClick={scroll}>Upcoming</Link>
                 </Alpha>
                 <Alpha>
-                    <Link to="/search" className="link link3">Search</Link>
-                    <Link to="/discover" className="link link3">Discover</Link>
+                    <Link to="/search" className="link link3" onClick={scroll}>Search</Link>
+                    <Link to="/discover" className="link link3" onClick={scroll}>Discover</Link>
                 </Alpha>
             </Redirects>
             <Text>© 2022</Text>
