@@ -11,13 +11,16 @@ const NavBarDiv = styled.div`
     padding-left:230px;
 `
 export default function NavBar(){
+    function scroll() {
+        window.scrollTo(0, 0);
+    }
     return(
         <NavBarDiv>
-            <Link to="/" className="link2">Home</Link>
-            <Link to="/popular" className="link2">Popular</Link>
-            <Link to="/movies" className="link2">Movie</Link>
-            <Link to="/tvseries" className="link2">TV Series</Link>
-            <Link to="/search" className="link2">Search</Link>
+            <Link to="/" className="link2" onClick={scroll}>Home</Link>
+            <Link to="/popular" className="link2" onClick={scroll}>Popular</Link>
+            <Link to="/movies" className="link2" onClick={scroll}>Movie</Link>
+            <Link to="/tvseries" className="link2" onClick={scroll}>TV Series</Link>
+            <Link to="/search" className="link2" onClick={scroll}>Search</Link>
         </NavBarDiv>
     )
 }
