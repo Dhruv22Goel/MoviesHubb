@@ -43,7 +43,7 @@ export default function Credits() {
                     <Link to="/discover" className="link link3" onClick={scroll}>Discover</Link>
                 </Alpha>
             </Redirects>
-            <Text>© 2022</Text>
+            <Text>© 2023</Text>
         </CreditsDiv>
     )
 }
