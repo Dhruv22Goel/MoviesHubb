@@ -60,31 +60,6 @@ export default function About(){
                     <P>Greetings, I’m Dhruv . I’m a student living in Delhi,India. I am a fan of technology, food, and web development. I’m also interested in fitness and music.</P>
                 </AboutMeDiv>
             </AboutMe>
-
-        </AboutDiv>
-        <AboutDiv>
-            <AboutMe>
-                <AboutMeImgDiv>
-                    <AboutMeImg src={KanavProfilePic} />
-                </AboutMeImgDiv>
-                <AboutMeDiv>
-                    <h3>KANAV KAPOOR</h3>
-                    <p><b>Student, Web Developer, and Software Engineer in Delhi,India</b></p>
-                    <P>Hey there, I’m Kanav. I’m a student living in IF/140 Lajpat Nagar -1 New Delhi-110024 . I am a fan of technology, music, and acting. I’m also interested in camping and running. You can hire me with a click on the button above.</P>
-                </AboutMeDiv>
-            </AboutMe>
-        </AboutDiv>
-        <AboutDiv>
-            <AboutMe>
-                <AboutMeImgDiv>
-                    <AboutMeImg src={PushkarProfilePic} />
-                </AboutMeImgDiv>
-                <AboutMeDiv>
-                    <h3>PUSHKAR KUMAR</h3>
-                    <p><b>Student, Web Developer, and Software Engineer in Delhi,India</b></p>
-                    <P>Hey, I’m Pushkar. I’m a student living in Delhi, India. I am a fan of technology, programming, and coffee. You can hire me with a click on the button above.</P>
-                </AboutMeDiv>
-            </AboutMe>
         </AboutDiv>
         <NavBar/>
         </>
